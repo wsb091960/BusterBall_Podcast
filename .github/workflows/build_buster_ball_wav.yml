@@ -44,7 +44,7 @@ jobs:
           if [ -n "$MANUAL_REPORT" ]; then
             REPORT="$MANUAL_REPORT"
           else
-            REPORT="$(git diff-tree --no-commit-id --name-only -r HEAD | grep -E '^Buster_Ball_.*\.md$' | head -n 1)"
+            REPORT="$(git diff-tree --root --no-commit-id --name-only -r HEAD | grep -E '^Buster_Ball_.*\.md$' | head -n 1)"
           fi
           if [ -z "$REPORT" ] || [ ! -f "$REPORT" ]; then
             echo "No matching Buster Ball Markdown report was found."

@@ -1,0 +1,70 @@
+name: Build Buster Ball WAV
+
+on:
+  push:
+    paths:
+      - "Buster_Ball_*.md"
+  workflow_dispatch:
+    inputs:
+      report:
+        description: "Markdown report filename"
+        required: true
+        default: "Buster_Ball_SFG_at_LAD_2026-09-18.md"
+
+permissions:
+  contents: read
+
+jobs:
+  build-wav:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          python -m pip install openai pillow
+
+      - name: Select report
+        id: report
+        shell: bash
+        env:
+          MANUAL_REPORT: ${{ github.event.inputs.report }}
+        run: |
+          if [ -n "$MANUAL_REPORT" ]; then
+            REPORT="$MANUAL_REPORT"
+          else
+            REPORT="$(git diff-tree --no-commit-id --name-only -r HEAD | grep -E '^Buster_Ball_.*\.md$' | head -n 1)"
+          fi
+          if [ -z "$REPORT" ] || [ ! -f "$REPORT" ]; then
+            echo "No matching Buster Ball Markdown report was found."
+            exit 1
+          fi
+          echo "report=$REPORT" >> "$GITHUB_OUTPUT"
+          echo "wav=${REPORT%.*}.wav" >> "$GITHUB_OUTPUT"
+
+      - name: Generate WAV narration
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python buster_ball_report_to_wav.py \
+            "${{ steps.report.outputs.report }}" \
+            --overwrite
+
+      - name: Upload WAV
+        uses: actions/upload-artifact@v4
+        with:
+          name: buster-ball-wav
+          path: ${{ steps.report.outputs.wav }}
+          if-no-files-found: error
+          retention-days: 30

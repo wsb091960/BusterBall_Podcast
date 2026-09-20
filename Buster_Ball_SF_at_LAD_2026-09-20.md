@@ -1,66 +1,78 @@
 # BUSTER BALL PODCAST
-## Giants at Dodgers — September 20, 2026
+## September 20, 2026
 
-Hey, Giants fans, Billy B here. It’s Sunday, September twentieth, and the Giants are in Los Angeles for the final game of the series. First pitch is 1:10 Pacific at Dodger Stadium.
+Giants fans, how do you turn five scoreless innings against the Dodgers into a win? That’s tonight’s question—unfortunately, after a three-to-one loss and a Los Angeles sweep.
 
-San Francisco comes in at 64 and 91. The Dodgers are 95 and 60. That’s a thirty-one-game difference in the standings, but this afternoon is still a chance for the Giants to finish the weekend with a sharper, cleaner brand of baseball than we saw last night.
+I’m Billy B. Welcome to the Buster Ball Podcast. Sunday’s final, so let’s break down what happened, what carries forward, and how I’d approach Monday.
 
-## What Changed Saturday
+## From Saturday to Sunday
 
-The final score was Dodgers ten, Giants four, but the game didn’t begin as a blowout. San Francisco put four runs on Tarik Skubal in five innings and stayed competitive early. Victor Bericoto and Jung Hoo Lee each collected two hits, with Bericoto driving in a pair.
+Saturday ended ten-four Dodgers, with Mookie Betts collecting four hits. But Victor Bericoto homered and doubled against Tarik Skubal. That’s a legitimate bright spot.
 
-Then the game turned. Los Angeles scored three in the fifth and three more in the sixth, and a competitive night got away from the Giants quickly. Mookie Betts led the damage with four hits and two runs batted in.
+Keep giving Bericoto meaningful opportunities. I want to see repeatable swing decisions, not just another ball clearing the fence.
 
-That sets up today’s first challenge: don’t let Betts control the pace of the game again. Make somebody else beat you, and don’t give the top of that Dodgers order extra opportunities with walks or poorly located fastballs.
+Today brought Matt Wilkinson against Jack Dreyer, with Emmet Sheehan following Dreyer. Wilkinson threw five shutout innings with six strikeouts and no walks. Sheehan answered with nine strikeouts across five and a third scoreless innings.
 
-## Tugboat Gets the Ball
+Before today, Wilkinson’s strikeout-minus-walk rate was about ten percentage points: twelve strikeouts minus four walks, divided by eighty-one batters faced. Small sample, not a finished scouting profile. Right-handed hitters had also hit all four homers he’d allowed.
 
-Matt “Tugboat” Wilkinson starts for San Francisco. The left-hander owns a 4.58 ERA across 19 and two-thirds innings, with twelve strikeouts and four walks. That works out to roughly a 9.9 percent strikeout-minus-walk rate over 81 batters. It’s a small sample, but it tells us he has very little room for careless counts.
+That made strike quality against righties the central test. Could he challenge without leaving pitches over the heart? Today was encouraging, not a guarantee.
 
-Here’s where it gets interesting. Wilkinson’s four-seam fastball averages 90.4 miles per hour and accounts for about 58 percent of his pitches. That isn’t overpowering velocity, so location and sequencing have to do the heavy lifting.
+Against that Dreyer-to-Sheehan plan, I’d prepare for two different looks immediately. Don’t spend the first inning studying a pitcher you might never face again. Hunt a hittable strike, then reset when the bulk pitcher enters.
 
-His 49.2 percent hard-hit rate is the warning sign. Opponents have produced a .307 weighted on-base average against him, compared with a .318 expected mark. In plain English, some of that loud contact has found gloves. He can’t count on that continuing against this lineup.
+## Where It Turned
 
-The plan should be simple without becoming predictable: get strike one near the edges, change speeds before hitters settle on the fastball, and stay out of the heart of the plate. Judge the outing by location and quality of contact—not just whether a hard-hit ball happens to become an out.
+Jonah Cox walked, advanced on a bad pickoff throw, stole third and scored on Bericoto’s single. Later, Tommy Edman homered off Carson Seymour, and Kiké Hernández doubled home the go-ahead run against Sam Hentges.
 
-The Dodgers had not confirmed their starter when this report was prepared, so there’s no reason to invent a platoon matchup or pretend we know the batting order. The Giants’ hitters need a flexible plan until that information becomes official.
+That opening run is something to build around: reach base, recognize an opportunity, let the next hitter finish. Aggressive doesn’t have to mean impatient.
 
-## How the Giants Should Attack
+And I’m not blaming the hook after five just because the bullpen lost the lead. Show me the command, upcoming hitters and workload. A clean scoreboard alone isn’t enough to send a starter through the order again.
 
-Jung Hoo Lee is the table-setter I’m watching, wherever he hits. His 9.9 percent strikeout rate gives San Francisco a chance to begin innings with the ball in play. His power has been limited—a 2.3 percent barrel rate—but that isn’t the job today. The job is to extend at-bats, reach base, and make the Dodgers defend.
+## Bullpen and Health
 
-Lee has produced positive run value against four-seamers and struggled more against sinkers. That doesn’t mean he should swing at every fastball. It means his best opportunity comes when he identifies a hittable four-seamer in his zone and refuses to chase the pitcher’s pitch.
+Tristan Beck was recalled today, and Philip Abner was optioned to Sacramento. That changes the personnel, but it doesn’t establish Monday’s workload plan. Without complete postgame availability, I’m not calling this bullpen fresh or declaring anyone unavailable.
 
-After Bericoto’s two-hit, two-RBI performance Saturday, I’ll be watching his takes as closely as his swings. Can he stay disciplined and force the pitcher back over the plate, or will he expand the zone trying to repeat yesterday’s damage?
+My leverage plan: use the best available matchup when the game is threatened, even in the sixth. Don’t save your preferred arm for a ninth-inning lead you never reach. Reassess a starter’s third trip through the order before the inning—not after two runners get aboard.
 
-And then there’s Betts. He has slugged .563 against four-seam fastballs this season with only a 5.3 percent whiff rate. Wilkinson cannot show him the same elevated fastball over and over in two-strike counts. Change the speed, change the eye level, and make him solve more than one shape.
+Bryce Eldridge missed today while in concussion protocol following a head laceration. His return isn’t confirmed. Logan Webb’s season is over with a finger blister. Marcelo Mayer could return Monday, but no activation is announced.
 
-## Bullpen and Leverage
+So Eldridge and Mayer aren’t penciled into my lineup. Health clearance first; speculation can wait.
 
-The Giants used Philip Abner, Joel Kuhnel, and Duncan Davitt for two and one-third innings Saturday. The Dodgers used Evan Phillips, Alex Vesia, Edwin Díaz, and Seth Halvorsen for an inning apiece. Those are workload notes, not declarations that anyone is unavailable.
+## Monday’s Assignment
 
-Tony Vitello has identified Dylan Smith and Trent Harris as finishing options. Sam Hentges was activated Saturday after a rehab appearance, while Reiver Sanmartín went to the injured list with a right oblique strain. Bryce Eldridge remains in concussion protocol and is out today.
+Next comes Minnesota at Oracle Park, Monday, September 21, at 6:45 Pacific.
 
-So what does that mean tactically? Don’t save the best available reliever for a ninth inning that may never arrive. If the game is tied and the dangerous part of the Dodgers’ order comes up with runners aboard in the sixth or seventh, that is the leverage point. Attack it there.
+Blade Tidwell is listed for San Francisco, but Minnesota’s assignment is unresolved: Zebby Matthews and Bailey Ober have both been listed. Treat that as provisional until the club confirms it. I’m not selling you a detailed plan against the wrong starter.
 
-Wilkinson should also be reassessed before the second trip through the order. If the contact gets louder or the command starts to fade, have the next arm ready before the inning unravels—not after.
+For Tidwell, get ahead without becoming predictable. Land more than one pitch, then make hitters defend both sides of the plate. If the secondary stuff won’t cooperate, have relief ready before a third look at the top.
 
-## Three Keys to the Game
+Luke Keaschall’s .370 on-base percentage and Kody Clemens’ .463 slugging percentage point to different threats: extending innings and doing damage. Those numbers aren’t verified as updated through Sunday.
 
-First, get ahead without becoming predictable. Early strikes are valuable, but only if Wilkinson can follow them with a different speed or shape.
+I’d challenge Keaschall rather than nibble, and avoid giving Clemens a predictable fastball in a hitter’s count. For the Giants, I want Jung Hoo Lee and Bericoto thinking line drives and useful contact—not trying to repair the weekend with one swing.
 
-Second, make the unknown Dodgers starter earn every out. Hunt one area, adjust once the repertoire becomes clear, and remember that patience does not mean taking a hittable strike.
+## Three Tactical Keys
 
-Third, use the bullpen where the game is actually in danger. Stop the first major rally instead of managing toward a perfectly tidy ninth inning.
+First, win the strike decision. Attack a good first pitch rather than taking it just to run up the count. But don’t expand the zone to manufacture offense.
+
+Second, keep baserunning aggression selective. Apply pressure when the read is there, not because scarce runs make an automatic steal attempt tempting.
+
+Third, manage the next three hitters, not the inning number. Choose a reliever for the whole pocket of the order, with backup ready if command disappears.
+
+## Scout’s Notebook
+
+Wilkinson’s strike throwing and Bericoto’s competitive at-bats are the encouraging signs. Can those gains hold over repeated opportunities? And who can reliably protect a narrow lead? Those questions stay open.
+
+I couldn’t verify complete, updated wRC+, expected-wOBA or bullpen-leverage figures for this recording. Better to leave them out than dress up incomplete data as certainty.
+
+## Road to 100
+
+San Francisco is sixty-four and ninety-two. With six games left in a standard 162-game season, the ceiling is seventy wins. Even six losses would mean ninety-eight, not one hundred. That’s arithmetic, not a consolation prize.
+
+The useful goal now is better decisions and clearer answers about next year.
 
 ## The Pick
 
-I’m tracking Wilkinson’s first-pitch locations, the number of uncomfortable swings he creates with his secondary pitches, and the selectivity of Lee and Bericoto after their success Saturday.
+Today’s score is a result, not a prediction. For Monday, my provisional call is Twins four, Giants three. Low confidence, especially with Minnesota’s starter unresolved and relief availability unconfirmed.
 
-With seven games remaining, San Francisco can finish no better than 71 and no worse than 64 and 98. The Road to 100 is officially closed on both sides for the Giants. Los Angeles, meanwhile, needs five wins in its final seven to reach 100.
-
-My prediction is Dodgers six, Giants three. Los Angeles has the deeper lineup and the larger margin for error, but the Giants can keep this close if Wilkinson changes speeds, limits hard contact, and the bullpen is deployed before the game breaks open.
-
-After today, Minnesota visits Oracle Park Monday night at 6:45 Pacific.
+The Giants’ upset path? Tidwell limits free passes, the offense builds more than one scoring inning, and the best available reliever gets the biggest outs—whenever they arrive.
 
 That’s today’s Buster Ball Podcast scouting report. I’m Billy B.

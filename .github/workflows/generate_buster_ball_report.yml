@@ -1,6 +1,11 @@
 name: Generate Daily Buster Ball Report
 
 on:
+  push:
+    branches: ["main"]
+    paths:
+      - "generate_buster_ball_report.py"
+      - ".github/workflows/generate_buster_ball_report.yml"
   schedule:
     # 8:00 AM Pacific during the 2026 regular season (15:00 UTC).
     - cron: "0 15 * * *"

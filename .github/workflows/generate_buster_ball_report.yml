@@ -1,0 +1,73 @@
+name: Generate Daily Buster Ball Report
+
+on:
+  schedule:
+    # 8:00 AM Pacific during the 2026 regular season (15:00 UTC).
+    - cron: "0 15 * * *"
+  workflow_dispatch:
+    inputs:
+      report_date:
+        description: "Optional report date (YYYY-MM-DD); blank uses today's Pacific date"
+        required: false
+        type: string
+
+permissions:
+  actions: write
+  contents: write
+
+concurrency:
+  group: daily-buster-ball-report
+  cancel-in-progress: false
+
+jobs:
+  generate-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install OpenAI SDK
+        run: python -m pip install --upgrade openai
+
+      - name: Generate Markdown report
+        id: generate
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          REPORT_MODEL: ${{ vars.REPORT_MODEL || 'gpt-6-astra' }}
+          REPORT_DATE: ${{ inputs.report_date }}
+        shell: bash
+        run: |
+          if [ -n "$REPORT_DATE" ]; then
+            python generate_buster_ball_report.py --date "$REPORT_DATE" --overwrite
+          else
+            python generate_buster_ball_report.py --overwrite
+          fi
+
+      - name: Commit and push Markdown report
+        if: steps.generate.outputs.created == 'true'
+        env:
+          REPORT: ${{ steps.generate.outputs.report }}
+        run: |
+          git config user.name "Buster Ball Automation"
+          git config user.email "actions@users.noreply.github.com"
+          git add -- "$REPORT"
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+            exit 0
+          fi
+          git commit -m "Add Buster Ball report for ${REPORT%.md}"
+          git push
+
+      - name: Start WAV generation
+        if: steps.generate.outputs.created == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPORT: ${{ steps.generate.outputs.report }}
+        run: gh workflow run build_buster_ball_wav.yml --ref main -f report="$REPORT"

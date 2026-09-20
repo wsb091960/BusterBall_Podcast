@@ -98,6 +98,22 @@ def clean_markdown(text: str) -> str:
     text = re.sub(r"^```(?:markdown)?\s*", "", text, flags=re.IGNORECASE)
     text = re.sub(r"\s*```$", "", text)
     text = re.sub(r"\s*cite[^]+", "", text)
+    # Web search can return conventional Markdown links even when the prompt
+    # requests no citations. Remove citation-only links so they never appear
+    # at the end of a paragraph or get spoken by the narration step.
+    text = re.sub(
+        r"\s*\(\s*\[[^\]]+\]\(https?://[^)]+\)\s*\)",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    text = re.sub(
+        r"\s*\[[^\]]+\]\(https?://[^)]+\)",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    text = re.sub(r"\s*https?://\S+", "", text, flags=re.IGNORECASE)
     return text.strip() + "\n"
 
 
@@ -107,7 +123,9 @@ def shorten_report(client: OpenAI, model: str, report: str) -> str:
         input=(
             "Edit the following Buster Ball Podcast script to 6,400 characters or fewer. "
             "Preserve the verified facts, sabermetric analysis, tactical keys, prediction, "
-            "Billy B solo-host voice, Markdown headings, and final sign-off. Return only Markdown.\n\n"
+            "Billy B solo-host voice, Markdown headings, and final sign-off. Keep it natural "
+            "and easy to speak, with connected ideas and varied sentence length. Remove all "
+            "citations, source labels, links, URLs, and bibliography material. Return only Markdown.\n\n"
             + report
         ),
     )
@@ -178,7 +196,17 @@ probable pitchers, roster moves, or lineups. Label uncertainty clearly.
 
 Requirements:
 - Maximum 6,600 characters total.
-- Conversational advanced-sabermetrics podcast voice, written to be spoken aloud.
+- Write for the ear, not the page. Billy B should sound like a knowledgeable, relaxed
+  baseball broadcaster talking directly to Giants fans—not like he is reading a report.
+- Open with a strong game-day hook, then move naturally from the previous game to
+  today's matchup, the tactical plan, the bullpen, and the prediction.
+- Use conversational bridges such as “Here’s where it gets interesting,” “So what does
+  that mean tonight?” or similarly natural original phrasing. Do not reuse the same
+  transition repeatedly.
+- Vary sentence length, use contractions, and turn clusters of statistics into a clear
+  baseball point. Avoid choppy fragments, repetitive sentence openings, and metric dumps.
+- Keep Billy B as the only speaker. Do not create a co-host, interview, Q-and-A exchange,
+  stage directions, sound-effect notes, or fake quotations.
 - For a game day: recap the latest Giants action briefly, set the matchup, probable
   pitchers, bullpen condition, key hitters, injuries/roster changes, attack plans,
   leverage and times-through-order strategy, three tactical keys, and a score prediction.
@@ -187,7 +215,10 @@ Requirements:
   K-BB%, Whiff%, chase rate, Hard-Hit%, Barrel%, WPA, leverage, and run value.
   Do not force a metric when reliable current data is unavailable.
 - Include a concise Scout's Notebook and Road to 100 update when mathematically relevant.
-- Use Markdown headings, but do not include a bibliography or raw URLs.
+- Use short Markdown headings for organization. Do not include inline citations,
+  parenthetical source names, Markdown links, footnotes, a bibliography, or raw URLs.
+- Never end a paragraph with a source label such as MLB, Savant, FanGraphs,
+  Baseball-Reference, Box score, Transactions, or “source.”
 - End with: “That’s today’s Buster Ball Podcast scouting report. I’m Billy B.”
 """.strip()
 

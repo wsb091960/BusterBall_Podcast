@@ -84,6 +84,21 @@ def clean_report(raw: str) -> str:
     text = raw.replace("\r\n", "\n").replace("\r", "\n")
     text = re.sub(r"```.*?```", " ", text, flags=re.DOTALL)
     text = re.sub(r"!\[([^]]*)\]\([^)]*\)", r"\1", text)
+    # Remove citation-only links completely. Without this pass, a Markdown
+    # citation such as "([MLB](...))" is narrated as the stray word "MLB."
+    text = re.sub(
+        r"\s*\(\s*\[[^\]]+\]\(https?://[^)]+\)\s*\)",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    text = re.sub(
+        r"\s*\[[^\]]+\]\(https?://[^)]+\)",
+        "",
+        text,
+        flags=re.IGNORECASE,
+    )
+    text = re.sub(r"\s*https?://\S+", "", text, flags=re.IGNORECASE)
     text = re.sub(r"\[([^]]+)\]\([^)]*\)", r"\1", text)
     text = re.sub(r"^\s*#{1,6}\s*", "", text, flags=re.MULTILINE)
     text = re.sub(r"^\s*[-*+]\s+", "", text, flags=re.MULTILINE)

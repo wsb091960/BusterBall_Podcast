@@ -28,12 +28,28 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Validate R2 configuration before generating paid narration
+        env:
+          R2_ACCOUNT_ID: ${{ vars.R2_ACCOUNT_ID }}
+          R2_BUCKET: ${{ vars.R2_BUCKET }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+        run: |
+          python - <<'PY'
+          import os
+          required = ('R2_ACCOUNT_ID', 'R2_BUCKET', 'R2_ACCESS_KEY_ID', 'R2_SECRET_ACCESS_KEY')
+          missing = [name for name in required if not os.environ.get(name)]
+          if missing:
+              raise SystemExit('Configure R2 before generating narration. Missing: ' + ', '.join(missing))
+          PY
+
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y ffmpeg
           python -m pip install --upgrade pip
           python -m pip install openai pillow
+          python -m pip install -r requirements-storage.txt
 
       - name: Select report
         id: report
@@ -51,20 +67,34 @@ jobs:
             exit 1
           fi
           echo "report=$REPORT" >> "$GITHUB_OUTPUT"
-          echo "wav=${REPORT%.*}.wav" >> "$GITHUB_OUTPUT"
+          mkdir -p media-output
+          echo "wav=media-output/$(basename "${REPORT%.*}").wav" >> "$GITHUB_OUTPUT"
 
       - name: Generate WAV narration
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          REPORT: ${{ steps.report.outputs.report }}
+          WAV: ${{ steps.report.outputs.wav }}
         run: |
           python buster_ball_report_to_wav.py \
-            "${{ steps.report.outputs.report }}" \
+            "$REPORT" \
+            --output "$WAV" \
             --overwrite
 
-      - name: Upload WAV
+      - name: Upload and verify private R2 audio
+        env:
+          R2_ACCOUNT_ID: ${{ vars.R2_ACCOUNT_ID }}
+          R2_BUCKET: ${{ vars.R2_BUCKET }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          WAV: ${{ steps.report.outputs.wav }}
+        run: python media_storage.py "$WAV" --prefix podcast --manifest media-manifest.json
+
+      - name: Retain small media reference manifest
         uses: actions/upload-artifact@v4
         with:
-          name: buster-ball-wav
-          path: ${{ steps.report.outputs.wav }}
+          name: buster-ball-media-manifest
+          path: media-manifest.json
           if-no-files-found: error
           retention-days: 30
+

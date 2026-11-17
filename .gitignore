@@ -216,3 +216,21 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated podcast media belongs in external storage, never new Git blobs.
+# Existing tracked artwork is retained until a verified migration.
+/media-output/
+*.wav
+*.mp3
+*.m4a
+*.aac
+*.flac
+*.ogg
+*.mp4
+*.mov
+*.webm
+/Buster_Ball_*.png
+/Buster_Ball_*.jpg
+/Buster_Ball_*.jpeg
+/media-manifest*.json
+

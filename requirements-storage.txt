@@ -1,0 +1,2 @@
+# Optional dependency for media_storage.py; inventory/dry-run uses only stdlib.
+boto3>=1.36,<2
